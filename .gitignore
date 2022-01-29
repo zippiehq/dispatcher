@@ -8,3 +8,4 @@ key.txt
 /emulator_interface/src/cartesi_base*
 /emulator_interface/src/manager*
 /vir/*
+.DS_Store
