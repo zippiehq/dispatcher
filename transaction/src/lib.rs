@@ -273,7 +273,7 @@ impl TransactionManager {
                                 action: Action::Call(request_concern.contract_address),
                                 nonce: nonce,
                                 // do something better then double
-                                gas_price: U256::from(2)
+                                gas_price: U256::from(3)
                                     .checked_mul(gas_price)
                                     .unwrap(),
                                 // do something better then double
@@ -297,7 +297,7 @@ impl TransactionManager {
                                         let nonce_error = String::from(
                                             "the tx doesn't have the correct nonce",
                                         );
-                                        if rpc_error.message[..nonce_error.len()]
+                                        if rpc_error.message.len() > nonce_error.len() && rpc_error.message[..nonce_error.len()]
                                             == nonce_error
                                         {
                                             warn!(
